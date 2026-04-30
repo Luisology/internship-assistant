@@ -1,0 +1,30 @@
+Jane Doe
+jane.doe@example.com | (555) 123-4567
+
+EDUCATION
+State University, B.S. in Computer Science
+Expected Graduation: May 2027
+GPA: 3.7/4.0
+
+EXPERIENCE
+Personal Portfolio Website (2024)
+- Built a responsive personal site using HTML, CSS, and JavaScript.
+- Deployed to a free static host with a custom domain.
+
+Open Source Contributor (2023 - present)
+- Submitted small bug fixes and documentation patches to Python utility
+  libraries on GitHub.
+- Practiced writing clear pull request descriptions and responding to code
+  review feedback.
+
+Course Project: REST API for a Class Scheduling Tool (Spring 2024)
+- Designed and implemented a small REST API in Python.
+- Stored data in SQL and wrote unit tests for the core endpoints.
+
+SKILLS
+Programming: Python, Java, JavaScript, SQL, HTML, CSS
+Tools: Git, GitHub, Linux, VS Code
+Concepts: Data Structures, Algorithms, REST APIs, OOP
+
+INTERESTS
+Hiking, board games, contributing to open source.

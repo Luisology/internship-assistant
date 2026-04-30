@@ -1,0 +1,53 @@
+# ── Private user data — never upload these ───────────────────────────────────
+data/resume.txt
+data/*.txt
+data/internship_tracker.csv
+data/users.json
+generated_materials/*.txt
+generated_materials/*.docx
+generated_materials/*.pdf
+generated_materials/*.zip
+private_local_backup/
+
+# Catch any resume file at any depth
+resume.txt
+resume*.txt
+*resume*.txt
+# ...but keep the fake sample file in examples/ (it's safe — contains no real data)
+!examples/sample_resume.txt
+
+# Legacy root-level files from earlier versions
+resume accounting.txt
+internship_tracker.csv
+
+# Environment / secrets
+.env
+
+# ── macOS ─────────────────────────────────────────────────────────────────────
+.DS_Store
+
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual environments ──────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── IDE / editor ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Claude Code ───────────────────────────────────────────────────────────────
+.claude/
+.streamlit/

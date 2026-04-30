@@ -1,0 +1,24 @@
+Company: Example Tech Co
+Role: Software Engineering Intern
+Location: Remote, USA
+Apply by: 2026-12-31
+Required Skills: Python, Git, SQL
+
+Apply at https://example.com/careers/swe-intern
+
+About the role:
+Example Tech Co is hiring a Software Engineering Intern for our backend team.
+You will work on internal tools, write clean Python code, and learn best
+practices for testing, code review, and CI/CD. We are looking for someone
+comfortable with Python, Git, and basic SQL. Familiarity with Docker or
+Linux is a plus, but not required.
+
+What you'll do:
+- Build small features in a Python codebase.
+- Write unit tests and participate in code reviews.
+- Pair with senior engineers on design discussions.
+- Use Git for version control and contribute to our internal documentation.
+
+Notes:
+This is a fictional posting included as a sample for the Internship Assistant
+project. Replace it with a real posting when using the tool.

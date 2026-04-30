@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "internship-assistant"
+version = "0.2.0"
+description = "Local internship application operating system: track jobs, score resume match, generate Word-format outreach materials, and surface priorities, gaps, and follow-ups."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dependencies = [
+    "streamlit>=1.35.0",
+    "pypdf>=4.0.0",
+    "python-docx>=1.1.0",
+]
+
+[project.scripts]
+internship-assistant = "internship_assistant.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["internship_assistant*"]
