@@ -1,0 +1,16 @@
+# Internship Assistant — dark theme with indigo accent.
+# Edit this file to retheme the app. Streamlit reads it on startup.
+
+[theme]
+base                      = "dark"
+primaryColor              = "#6366f1"   # indigo-500
+backgroundColor           = "#0b1120"   # slate-950ish
+secondaryBackgroundColor  = "#0f172a"   # slate-900 (cards / sidebar)
+textColor                 = "#e2e8f0"   # slate-200
+font                      = "sans serif"
+
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false

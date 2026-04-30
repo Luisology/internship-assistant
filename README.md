@@ -95,6 +95,70 @@ python3 -m internship_assistant.cli
 
 ---
 
+## Deployment
+
+### Run locally (recommended for personal use)
+
+```bash
+git clone https://github.com/Luisology/internship-assistant.git
+cd internship-assistant
+pip3 install -r requirements.txt
+python3 -m streamlit run app.py
+```
+
+This is the **privacy-preserving** way to use the app: your resume and tracker stay on your computer, your demo accounts live only in `data/users.json`, and nothing is uploaded.
+
+### Deploy on Streamlit Community Cloud
+
+The repo is ready for [share.streamlit.io](https://share.streamlit.io). Deploy steps:
+
+1. Sign in to Streamlit Community Cloud with your GitHub account.
+2. Click **New app**.
+3. Settings to enter:
+   - **Repository:** `Luisology/internship-assistant`
+   - **Branch:** `main`
+   - **Main file path:** `app.py`
+   - **Python version:** 3.11 (default — works fine)
+4. Click **Deploy**. The first build installs `streamlit`, `pypdf`, and `python-docx` from `requirements.txt` (~1–2 min).
+5. The dark theme is picked up automatically from `.streamlit/config.toml`.
+
+> ⚠️ **Privacy note for the cloud demo.** Streamlit Community Cloud is a public, multi-tenant platform. Anyone with your app's URL can interact with the deployed instance. The local-first privacy guarantees in this README **do not apply** to the cloud deployment:
+> - Files written to `data/resume.txt`, `data/internship_tracker.csv`, `data/users.json`, and `generated_materials/*` live in the cloud container's filesystem (ephemeral, but readable to the running app instance and any visitor while the app is up).
+> - Demo accounts created on the cloud version are visible to other users of the same instance.
+> - **For real personal data — your actual resume, your actual job tracker — run locally.** Use the cloud deployment only as a public demo with sample data.
+>
+> If you do deploy publicly, consider:
+> - Wiping `data/` and `generated_materials/` on each restart (Streamlit Cloud restarts containers periodically).
+> - Adding a banner to `app.py` warning visitors that data is shared.
+> - Disabling Sign Up (point everyone to "Continue as Guest") — easy patch in `render_landing()`.
+
+### Files that ship to the cloud
+
+Everything tracked by git ships. Currently that's:
+
+```
+.gitignore
+.streamlit/config.toml          # theme only, no secrets
+LICENSE
+README.md
+app.py
+data/.gitkeep
+examples/sample_resume.txt      # fake "Jane Doe" — safe sample
+examples/sample_job_posting.txt # fake "Example Tech Co" — safe sample
+generated_materials/.gitkeep
+internship_assistant/*.py       # __init__, auth, cli, matcher, materials, priority, tracker
+pyproject.toml
+requirements.txt
+```
+
+Your real resume, real tracker, real users.json, real generated drafts, and `private_local_backup/` are **gitignored** and never reach GitHub or the cloud.
+
+### Secrets
+
+Never commit `.streamlit/secrets.toml` — it's gitignored explicitly. If a future feature needs an API key, set it via Streamlit Cloud's **Settings → Secrets** UI (those secrets stay on Streamlit's servers and are loaded into `st.secrets` at runtime).
+
+---
+
 ## Set up your resume
 
 Match scoring and material generation read your resume from `data/resume.txt`.

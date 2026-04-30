@@ -50,4 +50,8 @@ env/
 
 # ── Claude Code ───────────────────────────────────────────────────────────────
 .claude/
-.streamlit/
+
+# ── Streamlit ────────────────────────────────────────────────────────────────
+# Allow the theme config to ship to Streamlit Cloud, but block any secrets file.
+# (.streamlit/config.toml is committed; .streamlit/secrets.toml never is.)
+.streamlit/secrets.toml
